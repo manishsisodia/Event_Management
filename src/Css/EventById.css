@@ -1,0 +1,10 @@
+.buttons-container {
+    display: flex;
+    justify-content: space-between; /* Adjust this value according to your preference */
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .buttons-container button {
+    margin-right: 10px; /* Adjust as needed */
+  }
+  

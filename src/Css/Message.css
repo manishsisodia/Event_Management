@@ -1,0 +1,61 @@
+/* Messages.css */
+
+.messages-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .messages-header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .send-message-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .card h4 {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #666;
+  }
+  
+  .card p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
