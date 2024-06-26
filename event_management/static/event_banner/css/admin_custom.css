@@ -1,0 +1,66 @@
+/* Custom styles for the admin page */
+.app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.app-list .app {
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.app-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.app-list caption {
+    background: #f7f7f7;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.app-list th,
+.app-list td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.app-list a button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+}
+
+.app-list a button:hover {
+    background-color: #0056b3;
+}
+
+h2 a button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+h2 a button:hover {
+    background-color: #218838;
+}

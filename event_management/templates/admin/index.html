@@ -1,0 +1,92 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<h1>{{ site_header|default:_('Site administration') }}</h1>
+
+{% if site_url %}
+<p><a href="{{ site_url }}">{{ _('View site') }}</a></p> 
+{% endif %}
+
+<div id="content-main">
+    {% if app_list %}
+    <div class="app-list">
+        {% for app in app_list %}
+        <div class="app-{{ app.app_label }}">
+            <table>
+                <caption>
+                    <a href="{{ app.app_url }}">{{ app.name }}</a>
+                </caption>
+                <tbody>
+                    {% for model in app.models %}
+                    <tr class="model-{{ model.object_name|lower }}">
+                        <th scope="row"><a href="{{ model.admin_url }}">{{ model.name }}</a></th>
+                        <td><a href="{{ model.add_url }}">Add</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>{{ _('You don’t have permission to edit anything.') }}</p>
+    {% endif %}
+</div>
+
+<h2><a href="{% url 'admin-my-bookings' %}">My Bookings</a></h2>
+
+{% endblock %}
+
+{% block extrahead %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        color: #2c3e50;
+    }
+    .app-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .app-list > div {
+        flex: 1 1 30%;
+        margin: 0 1%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+    .app-list table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .app-list th, .app-list td {
+        padding: 8px;
+        text-align: left;
+    }
+    .app-list th {
+        background-color: #2c3e50;
+        color: white;
+    }
+    .app-list tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .app-list a {
+        color: #3498db;
+        text-decoration: none;
+    }
+    .app-list a:hover {
+        text-decoration: underline;
+    }
+    h2 a {
+        color: #e74c3c;
+        text-decoration: none;
+    }
+    h2 a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
